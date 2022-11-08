@@ -1,0 +1,92 @@
+:root{
+    --navbar-height: 75px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+#inviso-navbar-container{
+    position: fixed;
+    color: grey;
+    width: 100%;
+    min-height: var(--navbar-height);
+    background: linear-gradient(180deg, #e6e6e6 0%, #ebebeb 5.94%, white 35.14%, #fcfcfc 71.15%, #eeeeee 90.5%, #e6e6e6 99.99%);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    #inviso-navbar-left{
+        width: 20%;
+    }
+        #inviso-navbar-left img{
+            width: 100px;
+        }
+    #inviso-navbar-center{
+        width: 60%;
+        opacity: 0;
+    }
+    #inviso-navbar-right{
+        height: 100%;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+        #inviso-navbar-button-container{
+            width: 50px;
+            height: 20px;
+            position: relative;
+        }
+        #inviso-navbar-button-border{
+        }
+        #inviso-navbar-button{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+            .navbar-bar{
+                position: absolute;
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                /* margin: 5% 0 5% 0; */
+                transition: all .2s linear;
+            }
+            .navbar-bar::after{
+                content: "";
+                width: 100%;
+                border-top: 2px solid green;
+            }
+            #inviso-navbar-button.navbar-open .navbar-bar::after{
+                content: "";
+                width: 100%;
+                border-top: 1.5px solid green;
+            }
+            #navbar-top-bar{
+                top: 0px;
+            }
+            #inviso-navbar-button.navbar-open #navbar-top-bar{
+                transform: rotate(45deg);
+                transform-origin: 1px 1px;
+                /* width: 70%; */
+            }
+            #navbar-middle-bar{
+            }
+            #inviso-navbar-button.navbar-open #navbar-middle-bar{
+                opacity: 0;
+            }
+            #navbar-bottom-bar{
+                bottom: 0px;
+            }
+            #inviso-navbar-button.navbar-open #navbar-bottom-bar{
+                transform: rotate(-45deg);
+                transform-origin: 1px 1px;
+                /* width: 70%; */
+            }

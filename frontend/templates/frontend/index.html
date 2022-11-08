@@ -1,0 +1,29 @@
+{% load static cms_tags sekizai_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% render_block "css" %}
+    <title>{% page_attribute "page_title" %}</title>
+</head>
+<style>
+    body{
+        min-height: 100vh;
+    }
+</style>
+<body>
+    {% cms_toolbar %}
+    {% placeholder "Navbar" %}
+    {% placeholder "Content" %}
+    {% placeholder "Footer" %}
+    <!-- <input type="hidden" name="instance" id="instance" value="{{instance}}"> -->
+</body>
+{% render_block "js" %}
+<script>
+    var instance = '{{instance}}'
+</script>
+<script src="{% static "frontend/index.js" %}"></script>
+</html>
